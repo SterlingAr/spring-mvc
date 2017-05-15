@@ -9,12 +9,12 @@ com/packt/webstore/config/RootApplicationContextConfig.class
 com/packt/webstore/service/CartService.class
 com/packt/webstore/service/CustomerService.class
 com/packt/webstore/service/impl/CartServiceImpl.class
-com/packt/webstore/service/impl/CartRestController.class
 com/packt/webstore/config/SecurityWebApplicationInitializer.class
 com/packt/webstore/exception/ProductNotFoundException.class
 com/packt/webstore/validator/ProductIdValidator.class
 com/packt/webstore/domain/repository/CartRepository.class
 com/packt/webstore/dto/CartDto.class
+com/packt/webstore/controller/CartController.class
 com/packt/webstore/domain/repository/impl/CartMapper.class
 com/packt/webstore/domain/CartItem.class
 com/packt/webstore/config/WebApplicationContextConfig.class
@@ -24,6 +24,7 @@ com/packt/webstore/domain/Cart.class
 com/packt/webstore/domain/repository/impl/CartItemMapper.class
 com/packt/webstore/domain/repository/impl/InMemoryCustomerRepository$1.class
 com/packt/webstore/domain/repository/ProductRepository.class
+com/packt/webstore/controller/CartRestController.class
 com/packt/webstore/controller/HomeController.class
 com/packt/webstore/domain/repository/impl/InMemoryProductRepository$1.class
 com/packt/webstore/dto/CartItemDto.class

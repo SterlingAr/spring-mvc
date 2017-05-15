@@ -3,7 +3,6 @@
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/service/ProductService.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/domain/CartItem.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/config/SecurityWebApplicationInitializer.java
-/home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/service/impl/CartRestController.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/domain/repository/CustomerRepository.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/domain/repository/impl/InMemoryCartRepository.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/validator/ProductValidator.java
@@ -15,6 +14,7 @@
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/config/RootApplicationContextConfig.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/domain/repository/impl/InMemoryProductRepository.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/domain/repository/ProductRepository.java
+/home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/controller/CartRestController.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/domain/repository/impl/CartItemMapper.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/service/CustomerService.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/config/WebApplicationContextConfig.java
@@ -38,4 +38,5 @@
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/service/impl/CustomerServiceImpl.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/validator/ProductId.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/config/SecurityConfig.java
+/home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/controller/CartController.java
 /home/camorri/Spring MVC/webstore/src/main/java/com/packt/webstore/interceptor/PromoCodeInterceptor.java
