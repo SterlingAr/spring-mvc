@@ -2,43 +2,42 @@ package pcbuild;
 
 import java.util.UUID;
 
-import tests.Cpu;
-import tests.HardwareProduct;
-import tests.Os;
-import tests.Product;
-import tests.ProductCategory;
-import tests.ProductFactory;
-import tests.RamMemory;
-import tests.SoftwareProduct;
-
 abstract class Product {
-	
+
 	protected UUID id;
-	
+
 	protected String manufacturer;
-	
-	public Product(){}
-	
-	public Product(String manufacturer){
+
+	protected String category;
+
+	protected String type;
+
+	public Product() {
+	}
+
+	public Product(String manufacturer, String category, String type) {
 		this.manufacturer = manufacturer;
+		this.category = category;
+		this.type = type;
 		id = UUID.randomUUID();
 	}
-	
+
 	@Override
-	public String toString(){
-		return "Manufacturer: " + manufacturer + " \nUUID: " + id;
+	public String toString() {
+		return "Manufacturer: " + manufacturer + " \nUUID: " + id + "\ncategory:" + category + "\ntype: "+type;
 	}
-	
+
 	abstract void creatingProduct();
 
 }
+
 //
 class Cpu extends Product {
-	
-	public Cpu(String manufacturer){
-		super(manufacturer);
+
+	public Cpu(String manufacturer, String category, String type) {
+		super(manufacturer, category, type);
 	}
-	
+
 	@Override
 	void creatingProduct() {
 		System.out.println("Inside Cpu::creatingProduct()");
@@ -47,20 +46,18 @@ class Cpu extends Product {
 }
 
 class RamMemory extends Product {
-	
-	public RamMemory(String manufacturer){
-		super(manufacturer);
+
+	public RamMemory(String manufacturer, String category, String type) {
+		super(manufacturer, category, type);
+
 	}
 
 	@Override
 	void creatingProduct() {
 		System.out.println("Inside RamMemory::creatingProduct()");
 	}
-	
-	@Override
-	public String toString(){
-		return "Manufacturer: " + manufacturer + " \nUUID: " + id;
-	}
+
+
 
 }
 
@@ -69,22 +66,21 @@ class Os extends Product {
 	@Override
 	void creatingProduct() {
 		System.out.println("Inside Os::creatingProduct()");
-		
+
 	}
-	
+
 }
 //
-
 
 //
 class HardwareProduct extends ProductFactory {
 
 	public Cpu createCpu() {
-		return new Cpu("Intel");
+		return new Cpu("Intel", "Hardware", "Chipset");
 	}
 
 	public RamMemory createRamMemory() {
-		return new RamMemory("kingston");
+		return new RamMemory("kingston", "Hardware", "Memory");
 	}
 
 	@Override
@@ -95,7 +91,7 @@ class HardwareProduct extends ProductFactory {
 
 }
 
-class SoftwareProduct extends ProductFactory{
+class SoftwareProduct extends ProductFactory {
 
 	public Os createOs() {
 		return new Os();
@@ -114,36 +110,39 @@ class SoftwareProduct extends ProductFactory{
 	}
 
 }
+
 //
-enum ProductCategory{
-	
-	HARDWARE,SOFTWARE
-	
+enum ProductCategory {
+
+	HARDWARE, SOFTWARE
+
 }
 
 abstract class ProductFactory {
-	
+
 	private static final HardwareProduct HARDWARE_FACTORY = new HardwareProduct();
 	private static final SoftwareProduct SOFTWARE_FACTORY = new SoftwareProduct();
-	
-	static ProductFactory getFactory(ProductCategory category){
+
+	static ProductFactory getFactory(ProductCategory category) {
 		ProductFactory factory = null;
-		switch(category){
-		case HARDWARE: factory =  HARDWARE_FACTORY;break;
-		case SOFTWARE: factory =  SOFTWARE_FACTORY;break;
-		
+		switch (category) {
+		case HARDWARE:
+			factory = HARDWARE_FACTORY;
+			break;
+		case SOFTWARE:
+			factory = SOFTWARE_FACTORY;
+			break;
+
 		}
-		
+
 		return factory;
-		
+
 	}
-	
+
 	public abstract Cpu createCpu();
+
 	public abstract RamMemory createRamMemory();
+
 	public abstract Os createOs();
 
 }
-
-	
-
-

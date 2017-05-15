@@ -3,9 +3,7 @@ package pcbuild;
 import java.util.ArrayList;
 import java.util.List;
 
-import tests.Product;
-import tests.ProductCategory;
-import tests.ProductFactory;
+	
 
 public class Test {
 
