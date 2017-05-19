@@ -17,5 +17,5 @@ public interface CartRepository {
 	
 	void removeItem(String cartId, String productId);
 	
-
+	void cleanCart(String cartId);
 }

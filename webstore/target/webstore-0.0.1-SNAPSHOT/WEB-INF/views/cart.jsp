@@ -60,7 +60,7 @@
 				</tr>
 			</table>
 
-			<a href="<spring:urlvalue="/market/products" />"
+			<a href="<spring:url value="/market/products"/>"
 				class="btn btn-default"> <span
 				class="glyphicon-hand-left glyphicon"></span> Continue shopping
 			</a>
