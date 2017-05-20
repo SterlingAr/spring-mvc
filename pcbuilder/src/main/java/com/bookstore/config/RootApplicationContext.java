@@ -11,7 +11,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 @Configuration
-@ComponentScan("com.pcbuilder")
+@ComponentScan("com.bookstore")
 public class RootApplicationContext {
 
 	@Bean

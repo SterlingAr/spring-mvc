@@ -13,7 +13,7 @@ import org.springframework.web.util.UrlPathHelper;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.pcbuilder")
+@ComponentScan("com.bookstore")
 public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
 	
 	@Override
