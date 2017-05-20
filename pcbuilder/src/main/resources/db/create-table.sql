@@ -2,23 +2,22 @@ DROP TABLE BOOKS IF EXISTS;
 DROP TABLE AUTHORS IF EXISTS;
 
 
-CREATE TABLE authors (
-author_id VARCHAR(60) NOT NULL PRIMARY KEY,
-firstName VARCHAR(25),
-lastName VARCHAR(25),
-age INT,
-biography VARCHAR(1500)
-);
-
 CREATE TABLE books (
 book_id VARCHAR(60) NOT NULL PRIMARY KEY,
 isbn VARCHAR(50) NOT NULL,
 title VARCHAR(60),
 category VARCHAR(50),
 book_length INT UNSIGNED,
-description VARCHAR(1500),
+description VARCHAR(250),
 fk_author_id VARCHAR(60) NOT NULL FOREIGN KEY REFERENCES authors(author_id),
 
 
 );
 
+CREATE TABLE authors (
+author_id VARCHAR(60) NOT NULL PRIMARY KEY,
+firstName VARCHAR(25),
+lastName VARCHAR(25),
+fk_book_id VARCHAR(60) NOT NULL FOREIGN KEY REFERENCES books(book_id),
+
+);
