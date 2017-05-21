@@ -1,8 +1,8 @@
 package com.bookstore.dto;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class BookListDto implements Serializable{
 
@@ -15,11 +15,11 @@ public class BookListDto implements Serializable{
 
 	private List<BookItemDto> bookItems;
 
-	
+	public BookListDto(){}
 
 	public BookListDto(String bookListId) {
-		super();
 		this.bookListId = bookListId;
+		bookItems = new ArrayList<>();
 	}
 
 	public List<BookItemDto> getBookItems() {

@@ -31,7 +31,7 @@ public class BookListMapper implements RowMapper<BookList> {
 		BookList bookList = new BookList(id);
 
 		// I select all the book items belonging to the book list
-		String queryBookItems = String.format("SELECT * FROM book_item WHERE book_list_id = '%id'", id);
+		String queryBookItems = String.format("SELECT * FROM book_item WHERE book_list_id = '%s'", id);
 		List<BookItem> bookItems = jdbcTemplate.query(queryBookItems, bookItemMapper);
 		
 		bookList.setBookItems(bookItems);
