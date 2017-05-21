@@ -9,7 +9,7 @@
 <html>
 <head>
 <spring:url value="/resources/css/main.css" var="mainCss" />
-<title>Phantom by HTML5 UP</title>
+<title>Aleaxiandriapp</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
@@ -24,6 +24,7 @@
 	<!-- Wrapper -->
 	<div id="wrapper">
 
+
 		<!-- Header -->
 		<header id="header">
 			<div class="inner">
@@ -31,13 +32,13 @@
 				<!-- Logo -->
 				<a href="index.html" class="logo"> <span class="symbol"><img
 						src="/bookstore/resources/images/logo.svg" alt="" /></span><span
-					class="title">Phantom</span>
+					class="title">Aleaxiandriapp</span>
 				</a>
 
 				<!-- Nav -->
 				<nav>
 					<ul>
-						<li><a href="#menu">Menu</a></li>
+						<li><a href="#menu"><spring:message code="menu.title"></spring:message></a></li>
 					</ul>
 				</nav>
 
@@ -46,14 +47,62 @@
 
 		<!-- Menu -->
 		<nav id="menu">
-			<h2>Menu</h2>
+			
+				<div class="box alt">
+				<div class="row uniform">
+			
+					<div class="2u">
+						<span class="image fit ">
+							<a href="?language=de">
+								<img src="/bookstore/resources/images/germany.png" alt="" />
+							</a>
+						</span>
+					</div>
+					<div class="2u">
+						<span class="image fit ">
+							<a href="?language=es">
+								<img src="/bookstore/resources/images/spain.png" alt="" />
+							</a>
+						</span>
+					</div>
+					<div class="2u">
+						<span class="image fit">
+							<a href="?language=en">
+								<img src="/bookstore/resources/images/uk.png" alt="" />
+							</a>	
+						</span>
+					</div>
+					
+					<div class="2u">
+						<span class="image fit">
+							<a href="?language=en">
+								<img src="/bookstore/resources/images/basque.png" alt="" />
+							</a>	
+						</span>
+					</div>
+			
+				</div>
+			</div>
+		
+		
+			<h2>
+				<spring:message code="menu.title"></spring:message>
+			</h2>
 			<ul>
-				<li><a href="index.jsp">Home</a></li>
-				<li><a href="generic.html">Ipsum veroeros</a></li>
-				<li><a href="generic.html">Tempus etiam</a></li>
-				<li><a href="generic.html">Consequat dolor</a></li>
-				<li><a href="elements.html">Elements</a></li>
+				<li><a href="index.jsp"><spring:message code="menu.home"></spring:message></a></li>
+				<li><a href="generic.html"><spring:message
+							code="menu.books"></spring:message></a></li>
+				<li><a href="login.jsp"><spring:message code="menu.login"></spring:message></a></li>
+				<li><a href="generic.html"><spring:message
+							code="menu.readinglist"></spring:message></a></li>
+							
+					<li><a href="<c:url value="/logout"/>"><spring:message
+							code="menu.logout"></spring:message></a></li>
+				
 			</ul>
+	
+		
+
 		</nav>
 
 		<!-- Main -->
@@ -77,8 +126,8 @@
 						<article class="style1">
 							<span class="image"> <img
 								src="/bookstore/resources/images/${book.bookId}.jpg" alt="" />
-							</span> <a href="<spring:url value="/book?id=${book.bookId}" />">
-								<h2>${book.title}</h2>
+							</span> <a href="<spring:url value="/book?id=${book.bookId}" />"/>
+
 								<div class="content">
 									<p>${book.description}</p>
 								</div>
@@ -112,27 +161,7 @@
 						</ul>
 					</form>
 				</section>
-				<section>
-					<h2>Follow</h2>
-					<ul class="icons">
-						<li><a href="#" class="icon style2 fa-twitter"><span
-								class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon style2 fa-facebook"><span
-								class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon style2 fa-instagram"><span
-								class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon style2 fa-dribbble"><span
-								class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon style2 fa-github"><span
-								class="label">GitHub</span></a></li>
-						<li><a href="#" class="icon style2 fa-500px"><span
-								class="label">500px</span></a></li>
-						<li><a href="#" class="icon style2 fa-phone"><span
-								class="label">Phone</span></a></li>
-						<li><a href="#" class="icon style2 fa-envelope-o"><span
-								class="label">Email</span></a></li>
-					</ul>
-				</section>
+				
 				<ul class="copyright">
 					<li>&copy; Untitled. All rights reserved</li>
 					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
@@ -143,13 +172,17 @@
 	</div>
 
 	<!-- Scripts -->
-	
 
 
-<script type="text/javascript" src="/bookstore/resources/js/jquery.min.js"></script>
-<script type="text/javascript" src="/bookstore/resources/js/skel.min.js"></script>
-<script type="text/javascript" src="/bookstore/resources/js/util.js"></script>
-<script type="text/javascript" src="/bookstore/resources/js/main.js"> </script>
+
+	<script type="text/javascript"
+		src="/bookstore/resources/js/jquery.min.js"></script>
+	<script type="text/javascript"
+		src="/bookstore/resources/js/skel.min.js"></script>
+	<script type="text/javascript" src="/bookstore/resources/js/util.js"></script>
+	<script type="text/javascript" src="/bookstore/resources/js/main.js">
+		
+	</script>
 
 
 </body>

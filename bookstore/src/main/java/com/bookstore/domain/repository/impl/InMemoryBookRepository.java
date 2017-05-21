@@ -27,7 +27,7 @@ public class InMemoryBookRepository implements BookRepository {
 	public List<Book> getAllBooks() {
 		String queryBooks = "SELECT * FROM BOOKS";
 		Map<String, Object> params = new HashMap<String, Object>();
-
+		
 		List<Book> books = jdbcTemplate.query(queryBooks, params, new BookMapper());
 		return books;
 
@@ -42,7 +42,7 @@ public class InMemoryBookRepository implements BookRepository {
 			book.setIsbn(rs.getString("isbn"));
 			book.setAuthor(rs.getString("author"));
 			book.setTitle(rs.getString("title"));
-			book.setCategory("category");
+			book.setCategory(rs.getString("category"));
 			book.setLength(rs.getInt("book_length"));
 			book.setDescription(rs.getString("description"));
 
