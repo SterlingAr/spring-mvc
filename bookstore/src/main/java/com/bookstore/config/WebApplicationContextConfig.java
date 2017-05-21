@@ -19,6 +19,7 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 import org.springframework.web.util.UrlPathHelper;
 
 @Configuration
@@ -98,5 +99,15 @@ public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
 		return resolver;
 
 	}
+	
+	@Bean
+	public MappingJackson2JsonView jsonView() {
+		MappingJackson2JsonView jsonView = new MappingJackson2JsonView();
+
+		jsonView.setPrettyPrint(true);
+
+		return jsonView;
+	}
+	
 
 }
