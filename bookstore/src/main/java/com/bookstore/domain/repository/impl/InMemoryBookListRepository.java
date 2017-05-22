@@ -92,7 +92,7 @@ public class InMemoryBookListRepository implements BookListRepository {
 		String SQL = null;
 		BookList bookList = null;
 
-		bookList = read(bookId);
+		bookList = read(bookListId);
 
 		if (bookList == null) {
 

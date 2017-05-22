@@ -98,7 +98,7 @@
 						class="btn btn-default"> <span
 						class="glyphicon-hand-right glyphicon"></span> View Cart
 					</a>
-
+ 
 				</p>
 			</div>
 		</div>

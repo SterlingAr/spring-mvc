@@ -95,7 +95,7 @@
 		</nav>
 
 		<!-- Main -->
-		<div id="main">
+		<div id="main" ng-app="bookListApp">
 			<div class="inner">
 				<h1>${book.title}</h1>
 				<span class="image main"><img
@@ -106,7 +106,7 @@
 			<div class="6u 12u$(medium) inner" id="main">
 
 				<h3>Details</h3>
-				<ul class="alt">
+				<ul class="alt" ng-controller="bookListCtrl">
 					<li><strong> <spring:message code="book.author"></spring:message>
 					</strong>: ${book.author}</li>
 
@@ -121,7 +121,9 @@
 
 					<li><strong> <spring:message code="book.description"></spring:message>
 					</strong>: ${book.description}</li>
-
+					<li><a href="#" class="button" ng-click="addToBookList('${book.bookId}')">Add to list</a></li>
+					<li><a href="<spring:url value="/booklist" />" class="button" >Go to list</a></li>
+					
 				</ul>
 			</div>
 		</div>
@@ -141,7 +143,9 @@
 
 	<!-- Scripts -->
 
-
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.1/angular.min.js"></script>
+	<script src="/bookstore/resources/js/controller.js"></script>
 	<script type="text/javascript"
 		src="/bookstore/resources/js/jquery.min.js"></script>
 	<script type="text/javascript"

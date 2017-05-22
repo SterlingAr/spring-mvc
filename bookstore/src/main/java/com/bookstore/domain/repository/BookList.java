@@ -6,6 +6,11 @@ import java.util.UUID;
 
 public class BookList implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private String cartId;
 
 	private List<BookItem> bookItems;
