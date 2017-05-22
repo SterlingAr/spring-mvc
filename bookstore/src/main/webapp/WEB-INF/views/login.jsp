@@ -29,7 +29,7 @@ body {
 .body {
 	position: absolute;
 	top: -20px;
-	left: -20px;
+	left: -40px;
 	right: -40px;
 	bottom: -40px;
 	width: auto;
@@ -43,7 +43,7 @@ body {
 .grad {
 	position: absolute;
 	top: -20px;
-	left: -20px;
+	left: -40px;
 	right: -40px;
 	bottom: -40px;
 	width: auto;
@@ -66,7 +66,7 @@ body {
 	float: left;
 	color: #fff;
 	font-family: 'Exo', sans-serif;
-	font-size: 35px;
+	font-size: 25px;
 	font-weight: 200;
 }
 
@@ -167,32 +167,32 @@ body {
 	<div class="grad"></div>
 	<div class="header">
 		<div>
-			Site<span>Random</span>
+			Alexandria<span>App</span>
 		</div>
 	</div>
 	<br>
 
 
-
+		
 	<div class="login">
 		<c:url var="loginUrl" value="/login" />
 		<form action="${loginUrl}" method="post">
 			<c:if test="${param.error != null}">
 				<div class="alert alert-danger">
-					<p>Invalid username and password.</p>
+					<p><spring:message code="loginInfo.invalidData"></spring:message></p>
 				</div>
 			</c:if>
 
 			<c:if test="${param.logout != null}">
 				<div class="alert alert-success">
-					<p>You have been logged out successfully.</p>
+					<p><spring:message code="loginInfo.loggedOut"> </spring:message></p>
 				</div>
 			</c:if>
 
 			<c:if test="${param.accessDenied !=null}">
 
 				<div class="alert alert-danger">
-					<p>Access Denied: You are not authorised!</p>
+					<p><spring:message code="loginInfo.accessDenied"> </spring:message></p>
 				</div>
 			</c:if>
 

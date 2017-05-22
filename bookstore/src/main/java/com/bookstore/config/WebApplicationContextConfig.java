@@ -56,7 +56,9 @@ public class WebApplicationContextConfig extends WebMvcConfigurerAdapter {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 		registry.addResourceHandler("*.js").addResourceLocations("/resources/assets/js/");
-		registry.addResourceHandler("/img/**").addResourceLocations("resources/assets/images/");
+		registry.addResourceHandler("*.png").addResourceLocations("resources/assets/images/");
+		registry.addResourceHandler("*.jpg").addResourceLocations("resources/assets/images/");
+
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/assets/");
 
 		// registry.addResourceHandler("/resources/**").addResourceLocations("/resources/images/**");

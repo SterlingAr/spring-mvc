@@ -81,7 +81,7 @@ public class InMemoryBookListRepository implements BookListRepository {
 		String DELETE_BOOK_ITEMS = "DELETE FROM book_item WHERE book_list_id = :bookListId";
 		String DELETE_BOOK_LIST = "DELETE FROM book_list WHERE id = :bookListId";
 		Map<String, Object> params = new HashMap<String, Object>();
-
+		params.put("bookListId", bookListId);
 		jdbcTemplate.update(DELETE_BOOK_ITEMS, params);
 		jdbcTemplate.update(DELETE_BOOK_LIST, params);
 	}
@@ -129,7 +129,7 @@ public class InMemoryBookListRepository implements BookListRepository {
 		String SQL_DELETE_BOOK_ITEM = "DELETE FROM book_item WHERE book_id = :bookId AND book_list_id = :bookListId";
 		Map<String,Object> deleteBookItemParams = new HashMap<String,Object>();
 		deleteBookItemParams.put("bookId", bookId);
-		deleteBookItemParams.put("book_list_id", bookListId);
+		deleteBookItemParams.put("bookListId", bookListId);
 		
 		jdbcTemplate.update(SQL_DELETE_BOOK_ITEM, deleteBookItemParams);
 

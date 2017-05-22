@@ -14,7 +14,7 @@ public class HomeController {
 	@Autowired
 	private BookService bookService;
 	
-	@RequestMapping("/")
+	@RequestMapping("/index")
 	public String listBooks(Model model){
 		
 		model.addAttribute("books", bookService.getAllBooks());
@@ -22,5 +22,7 @@ public class HomeController {
 		return "index";
 		
 	}
+	
+	
 
 }

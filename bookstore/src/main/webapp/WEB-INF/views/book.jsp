@@ -7,7 +7,7 @@
 -->
 <html>
 <head>
-<spring:url value="/resources/css/main.css" var="mainCss" />
+<spring:url value="resources/css/main.css" var="mainCss" />
 <link rel="stylesheet" href="${mainCss}" />
 
 <title>${book.title}</title>
@@ -27,8 +27,8 @@
 			<div class="inner">
 
 				<!-- Logo -->
-				<a href="index.html" class="logo"> <span class="symbol"><img
-						src="/bookstore/resources/images/logo.svg" alt="" /></span><span
+				<a href="<c:url value="/index"/>" class="logo"> <span class="symbol"><img
+						src="resources/images/logo.svg" alt="" /></span><span
 					class="title">Aleaxiandriapp</span>
 				</a>
 
@@ -43,32 +43,32 @@
 		</header>
 
 		<!-- Menu -->
-		<nav id="menu">
+<nav id="menu">
 			<div class="box alt">
 				<div class="row uniform">
 
 					<div class="2u">
 						<span class="image fit "> <a href="book?id=${book.bookId}&language=de"> <img
-								src="/bookstore/resources/images/germany.png" alt="" />
+								src="../resources/images/germany.png" alt="" />
 						</a>
 						</span>
 					</div>
 					<div class="2u">
 						<span class="image fit "> <a href="book?id=${book.bookId}&language=es"> <img
-								src="/bookstore/resources/images/spain.png" alt="" />
+								src="../resources/images/spain.png" alt="" />
 						</a>
 						</span>
 					</div>
 					<div class="2u">
 						<span class="image fit"> <a href="book?id=${book.bookId}&?language=en"> <img
-								src="/bookstore/resources/images/uk.png" alt="" />
+								src="../resources/images/uk.png" alt="" />
 						</a>
 						</span>
 					</div>
 
 					<div class="2u">
 						<span class="image fit"> <a href="book?id=${book.bookId}&?language=en"> <img
-								src="/bookstore/resources/images/basque.png" alt="" />
+								src="../resources/images/basque.png" alt="" />
 						</a>
 						</span>
 					</div>
@@ -81,14 +81,13 @@
 				<spring:message code="menu.title"></spring:message>
 			</h2>
 			<ul>
-				<li><a href="index.jsp"><spring:message code="menu.home"></spring:message></a></li>
-				<li><a href="generic.html"><spring:message
+				<li><a href="<c:url value="/index"/>"><spring:message code="menu.home"></spring:message></a></li>
+				<li><a href="<c:url value="/index"/>"><spring:message
 							code="menu.books"></spring:message></a></li>
-				<li><a href="login.jsp"><spring:message code="menu.login"></spring:message></a></li>
-				<li><a href="generic.html"><spring:message
+				<li><a href="<c:url value="/booklist"/>"><spring:message
 							code="menu.readinglist"></spring:message></a></li>
 
-				<li><a href="<c:url value="/logout"/>"><spring:message
+				<li><a href="<c:url value="/"/>"><spring:message
 							code="menu.logout"></spring:message></a></li>
 
 			</ul>
@@ -99,13 +98,13 @@
 			<div class="inner">
 				<h1>${book.title}</h1>
 				<span class="image main"><img
-					src="/bookstore/resources/images/${book.bookId}.jpg" alt="" /></span>
+					src="resources/images/${book.bookId}.jpg" alt="" /></span>
 
 
 			</div>
 			<div class="6u 12u$(medium) inner" id="main">
 
-				<h3>Details</h3>
+				<h3><spring:message code = "book.details"></spring:message></h3>
 				<ul class="alt" ng-controller="bookListCtrl">
 					<li><strong> <spring:message code="book.author"></spring:message>
 					</strong>: ${book.author}</li>
@@ -121,8 +120,8 @@
 
 					<li><strong> <spring:message code="book.description"></spring:message>
 					</strong>: ${book.description}</li>
-					<li><a href="#" class="button" ng-click="addToBookList('${book.bookId}')">Add to list</a></li>
-					<li><a href="<spring:url value="/booklist" />" class="button" >Go to list</a></li>
+					<li><a href="#" class="button" ng-click="addToBookList('${book.bookId}')"><spring:message code="bookApp.add"></spring:message></a></li>
+					<li><a href="<spring:url value="/booklist" />" class="button" ><spring:message code="bookApp.goToList"></spring:message></a></li>
 					
 				</ul>
 			</div>
@@ -147,12 +146,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.1/angular.min.js"></script>
 	<script src="/bookstore/resources/js/controller.js"></script>
 	<script type="text/javascript"
-		src="/bookstore/resources/js/jquery.min.js"></script>
+		src="resources/js/jquery.min.js"></script>
 	<script type="text/javascript"
-		src="/bookstore/resources/js/skel.min.js"></script>
-	<script type="text/javascript" src="/bookstore/resources/js/util.js"></script>
+		src="resources/js/skel.min.js"></script>
+	<script type="text/javascript" src="resources/js/util.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script type="text/javascript" src="/bookstore/resources/js/main.js">
+	<script type="text/javascript" src="resources/js/main.js">
 		
 	</script>
 
