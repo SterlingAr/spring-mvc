@@ -107,12 +107,13 @@
 					<label class="control-label col-lg-2" for="condition"><spring:message
 							code="addProduct.form.condition.label" /></label>
 					<div class="col-lg-10">
-						<form:radiobutton path="condition" value="New" />
+						<form:radiobutton path="condition" value="a" />
 						New
 						<form:radiobutton path="condition" value="Old" />
 						Old
 						<form:radiobutton path="condition" value="Refurbished" />
 						Refurbished
+						<form:errors path="condition" cssClass="text-danger" />
 					</div>
 				</div>
 
